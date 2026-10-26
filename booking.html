@@ -164,6 +164,46 @@ var SB_URL = 'https://rybegzvtqxglneevamha.supabase.co';
 var SB_KEY = 'sb_publishable_ETzQNNOJZyaxg66on3Hbxw_1GpzG4g1';
 
 var state = { type: 'Hourly', veh: 'Escalade', rate: 145, day: 130 };
+var lastEstimate = { total: null, special: null };
+
+// Special-date pricing set by Blueprintle in the dispatch console
+// (rate_overrides). Public read-only; falls back silently to standard
+// rates if unavailable.
+var overrides = [];
+fetch(SB_URL + '/rest/v1/rate_overrides?select=*&active=eq.true', {
+  headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY }
+}).then(function (r) { return r.ok ? r.json() : []; })
+  .then(function (rows) { overrides = rows || []; recalc(); })
+  .catch(function () {});
+
+function currentOverride() {
+  var d = document.getElementById('b-date').value;
+  if (!d) return null;
+  for (var i = 0; i < overrides.length; i++) {
+    if (overrides[i].date_from <= d && d <= overrides[i].date_to) return overrides[i];
+  }
+  return null;
+}
+
+// Base card rates, replaced per vehicle class by a matching special-date
+// override. For Sprinter classes the special hourly rate also becomes
+// the full-day rate; the Escalade has its own special day rate.
+function effRates() {
+  var r = { rate: state.rate, day: state.day, special: null };
+  var o = currentOverride();
+  if (!o) return r;
+  var changed = false;
+  if (state.veh === 'Escalade') {
+    if (o.escalade_rate != null) { r.rate = Number(o.escalade_rate); changed = true; }
+    if (o.escalade_day_rate != null) { r.day = Number(o.escalade_day_rate); changed = true; }
+  } else if (state.veh === 'Sprinter' && o.sprinter_rate != null) {
+    r.rate = Number(o.sprinter_rate); r.day = r.rate; changed = true;
+  } else if (state.veh === 'VIP Sprinter' && o.vip_sprinter_rate != null) {
+    r.rate = Number(o.vip_sprinter_rate); r.day = r.rate; changed = true;
+  }
+  if (changed) r.special = o.name;
+  return r;
+}
 
 function money(n) { return '$' + n.toLocaleString('en-US'); }
 
@@ -173,18 +213,22 @@ function recalc() {
   var amt = document.getElementById('estAmt');
   var note = document.getElementById('estNote');
   document.getElementById('hoursField').style.display = state.type === 'Hourly' ? '' : 'none';
+  lastEstimate = { total: null, special: null };
   if (state.type === 'Transfer') {
     amt.textContent = 'Quoted individually';
     note.textContent = 'Transfers are priced by route — send the request and we will reply with your price.';
     return null;
   }
-  var perHour = state.type === 'Full-Day' ? state.day : state.rate;
+  var er = effRates();
+  var perHour = state.type === 'Full-Day' ? er.day : er.rate;
   var hrs = state.type === 'Full-Day' ? 8 : hours;
   var total = perHour * hrs * vehicles;
+  lastEstimate = { total: total, special: er.special };
   amt.textContent = money(total);
   note.textContent = 'Instant estimate — ' + state.veh + ' × ' + hrs + ' hours' +
     (vehicles > 1 ? ' × ' + vehicles + ' vehicles' : '') +
-    '. Your final quote is confirmed personally; the luggage van, if selected, is quoted with your itinerary.';
+    (er.special ? '. Special pricing applied: ' + er.special + '.' : '.') +
+    ' Your final quote is confirmed personally; the luggage van, if selected, is quoted with your itinerary.';
   return total;
 }
 
@@ -202,7 +246,8 @@ document.getElementById('vcards').addEventListener('click', function (e) {
   state.day = parseInt(card.dataset.day, 10);
   recalc();
 });
-['b-hours', 'b-vehicles'].forEach(id => document.getElementById(id).addEventListener('input', recalc));
+['b-hours', 'b-vehicles', 'b-date'].forEach(id => document.getElementById(id).addEventListener('input', recalc));
+document.getElementById('b-date').addEventListener('change', recalc);
 recalc();
 
 document.getElementById('bookForm').addEventListener('submit', function (ev) {
@@ -219,13 +264,15 @@ document.getElementById('bookForm').addEventListener('submit', function (ev) {
     msg.textContent = 'Please fill in your name, phone, pickup date and pickup location.';
     return;
   }
-  var est = recalc();
+  recalc();
+  var est = lastEstimate.total;
   var hours = Math.max(3, parseInt(f.hours.value, 10) || 3);
   var bags = parseInt(f.luggage_count.value, 10) || 0;
   var detail = 'Booking: ' + state.type +
     (state.type === 'Hourly' ? ' · ' + hours + 'h' : '') +
     ' · Vehicle: ' + state.veh +
-    (est ? ' · Estimate: ' + money(est) : '');
+    (est ? ' · Estimate: ' + money(est) : '') +
+    (lastEstimate.special ? ' · Special pricing: ' + lastEstimate.special : '');
   var notes = [f.notes.value.trim(), detail,
     bags > 0 ? 'Luggage: ' + bags + ' pieces' : '',
     f.luggage_van.checked ? 'LUGGAGE VAN requested' : '']
