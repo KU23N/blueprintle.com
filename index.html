@@ -3,237 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blueprintle Service LLC — Nationwide Chauffeur & Private Protection Services</title>
-<meta name="description" content="Nationwide chauffeur and private protection services, including chauffeured vehicle provision and city tours across the United States. Based in Fort Lauderdale, Florida.">
-<style>
-  :root { --ink:#0e1420; --panel:#141c2e; --line:#26314a; --text:#e8ecf4; --muted:#9aa7bd; --accent:#c8a24a; }
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: Georgia, 'Times New Roman', serif; background:var(--ink); color:var(--text); line-height:1.6; }
-  .wrap { max-width:960px; margin:0 auto; padding:0 24px; }
-  header { padding:28px 0; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; }
-  .brand { font-size:22px; letter-spacing:3px; text-transform:uppercase; }
-  .brand span { color:var(--accent); }
-  header a { color:var(--muted); text-decoration:none; font-size:15px; }
-  header a:hover { color:var(--accent); }
-  .hero { padding:84px 0 64px; text-align:center; }
-  .hero h1 { font-size:42px; font-weight:normal; line-height:1.25; margin-bottom:20px; }
-  .hero h1 em { color:var(--accent); font-style:normal; }
-  .hero p { font-size:19px; color:var(--muted); max-width:720px; margin:0 auto 32px; }
-  .btn { display:inline-block; border:1px solid var(--accent); color:var(--accent); padding:12px 30px; text-decoration:none; letter-spacing:1px; font-size:15px; background:transparent; font-family:inherit; cursor:pointer; }
-  .btn:hover { background:var(--accent); color:var(--ink); }
-  section { padding:48px 0; border-top:1px solid var(--line); }
-  h2 { font-size:26px; font-weight:normal; letter-spacing:2px; text-transform:uppercase; margin-bottom:28px; text-align:center; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; }
-  .card { background:var(--panel); border:1px solid var(--line); padding:28px 22px; }
-  .card h3 { font-size:18px; font-weight:normal; color:var(--accent); margin-bottom:10px; }
-  .card p { font-size:15px; color:var(--muted); }
-  .area, .contact { text-align:center; }
-  .area p, .contact p { color:var(--muted); font-size:17px; max-width:640px; margin:0 auto 10px; }
-  .contact a { color:var(--accent); text-decoration:none; }
-  footer { padding:32px 0 44px; border-top:1px solid var(--line); text-align:center; color:var(--muted); font-size:14px; }
-  /* --- Quote request form --- */
-  .quote-intro { text-align:center; color:var(--muted); font-size:17px; max-width:640px; margin:0 auto 30px; }
-  form.quote { background:var(--panel); border:1px solid var(--line); padding:32px 28px; max-width:760px; margin:0 auto; }
-  .qgrid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-  @media (max-width:640px){ .qgrid { grid-template-columns:1fr; } }
-  .field { display:flex; flex-direction:column; }
-  .field.full { grid-column:1 / -1; }
-  .field label { font-size:13px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
-  .field label b { color:var(--accent); font-weight:normal; }
-  .field input, .field select, .field textarea { background:var(--ink); border:1px solid var(--line); color:var(--text); padding:11px 12px; font-family:inherit; font-size:16px; width:100%; }
-  .field input:focus, .field select:focus, .field textarea:focus { outline:none; border-color:var(--accent); }
-  .field textarea { min-height:84px; resize:vertical; }
-  .qsubmit { margin-top:24px; text-align:center; }
-  .qmsg { margin-top:16px; text-align:center; font-size:15px; display:none; }
-  .qmsg.ok { color:#7fc97f; display:block; }
-  .qmsg.err { color:#e08a8a; display:block; }
-  .qnote { margin-top:14px; text-align:center; color:var(--muted); font-size:13px; }
-</style>
+<title>Blueprintle Service LLC — Miami Chauffeur, Private Protection & Luxury Transport</title>
+<meta name="description" content="Miami and Fort Lauderdale chauffeur service, private protection and luxury group transport. Escalade, Sprinter and VIP Sprinter — all vehicles 2025 or newer. Nationwide service from Fort Lauderdale, Florida.">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="brand">Blueprint<span>le</span></div>
-    <a href="mailto:info@blueprintle.com">info@blueprintle.com</a>
-  </header>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">Blueprint<span>le</span></a>
+    <nav class="main">
+      <a href="index.html" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="fleet.html">Fleet</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="booking.html" class="cta">Book Now</a>
+    </nav>
+  </div>
+</header>
 
+<div class="wrap">
   <div class="hero">
-    <h1>Blueprintle Service LLC<br><em>Nationwide Chauffeur &amp; Private Protection Services</em></h1>
-    <p>Nationwide chauffeur and private protection services, including chauffeured vehicle provision and city tours across the United States. Based in Fort Lauderdale, Florida.</p>
-    <a class="btn" href="#quote">Request a Quote</a>
+    <h1>Chauffeur &amp; Private Protection,<br><em>Done Discreetly.</em></h1>
+    <p>Luxury chauffeured transport and close protection for clients who value privacy. Based in Fort Lauderdale, serving Miami and clients nationwide — with a late-model fleet, all vehicles 2025 or newer.</p>
+    <a class="btn solid" href="booking.html">Get an Instant Estimate</a>
+    &nbsp;
+    <a class="btn" href="fleet.html">View the Fleet</a>
   </div>
 
   <section>
     <h2>Services</h2>
     <div class="grid">
       <div class="card">
-        <h3>Private Protection</h3>
-        <p>Discreet close protection services for individuals and families, planned around your schedule and itinerary.</p>
-      </div>
-      <div class="card">
-        <h3>Vehicle Provision</h3>
-        <p>Chauffeured vehicle provision for business travel, events, and private itineraries.</p>
-      </div>
-      <div class="card">
         <h3>Chauffeur Services</h3>
-        <p>Professional chauffeurs for airport transfers, roadshows, and day-to-day executive travel.</p>
+        <p>Professional chauffeurs for hourly charters, roadshows, events and day-to-day executive travel.</p>
       </div>
       <div class="card">
-        <h3>City Tours</h3>
-        <p>Private, chauffeur-led city tours tailored to your interests and pace.</p>
+        <h3>Private Protection</h3>
+        <p>Discreet close protection for individuals, families and high-profile clients, planned around your itinerary.</p>
+      </div>
+      <div class="card">
+        <h3>Group &amp; Event Transport</h3>
+        <p>Coordinated multi-vehicle movements of any size — our own fleet plus vehicles sourced through trusted partners, all run by Blueprintle — plus a separate luggage van when you need it.</p>
+      </div>
+      <div class="card">
+        <h3>Airport &amp; City Tours</h3>
+        <p>Airport transfers with flight tracking, and private chauffeur-led city tours across South Florida and beyond.</p>
+      </div>
+    </div>
+    <p class="center" style="margin-top:24px;"><a href="services.html">Explore all services →</a></p>
+  </section>
+
+  <section>
+    <h2>Miami Hourly Rates</h2>
+    <p class="rates-strip">Escalade <b>from $145/hr</b> (3-hour minimum) · Full-day charters <b>$130/hr</b> · Sprinter <b>from $139/hr</b> · VIP Exclusive Sprinter <b>$200/hr</b><br>All vehicles are 2025 model year or newer. Long-hour and multi-day charters are quoted individually.</p>
+    <p class="center" style="margin-top:22px;"><a class="btn" href="booking.html">Book Your Trip</a></p>
+  </section>
+
+  <section>
+    <h2>Why Blueprintle</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Privacy First</h3>
+        <p>Our clients include public figures. No names, no photos, no exceptions — discretion is the service.</p>
+      </div>
+      <div class="card">
+        <h3>Live Tracking</h3>
+        <p>Follow your vehicle live on a private link from the moment your chauffeur is on the way.</p>
+      </div>
+      <div class="card">
+        <h3>One Team, Whole Trip</h3>
+        <p>Multiple vehicles move as one — coordinated pickups, a luggage van for the bags, one point of contact.</p>
       </div>
     </div>
   </section>
 
-  <section id="quote">
-    <h2>Request a Quote</h2>
-    <p class="quote-intro">Tell us about your trip and we will reply with a tailored price quote. Every itinerary is quoted individually — no obligation.</p>
-    <p class="quote-intro" style="margin-bottom:30px;">Miami hourly service — <span style="color:var(--accent);">Escalade from $145/hr</span> (3-hour minimum) · full-day charters <span style="color:var(--accent);">$130/hr</span> · <span style="color:var(--accent);">Sprinter from $139/hr</span> · <span style="color:var(--accent);">VIP Exclusive Sprinter $200/hr</span><br>All vehicles are 2025 model year or newer. Long-hour and multi-day charters are quoted individually.</p>
-    <form class="quote" id="quoteForm" novalidate>
-      <div class="qgrid">
-        <div class="field">
-          <label for="q-name">Full name <b>*</b></label>
-          <input id="q-name" name="name" type="text" autocomplete="name" required>
-        </div>
-        <div class="field">
-          <label for="q-phone">Phone <b>*</b></label>
-          <input id="q-phone" name="phone" type="tel" autocomplete="tel" required>
-        </div>
-        <div class="field full">
-          <label for="q-email">Email</label>
-          <input id="q-email" name="email" type="email" autocomplete="email">
-        </div>
-        <div class="field">
-          <label for="q-service">Service</label>
-          <select id="q-service" name="service_type">
-            <option>Chauffeur Service</option>
-            <option>Airport Transfer</option>
-            <option>Private Protection</option>
-            <option>Vehicle Provision</option>
-            <option>City Tour</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="q-date">Pickup date <b>*</b></label>
-          <input id="q-date" name="pickup_date" type="date" required>
-        </div>
-        <div class="field">
-          <label for="q-time">Pickup time</label>
-          <input id="q-time" name="pickup_time" type="time">
-        </div>
-        <div class="field">
-          <label for="q-passengers">Passengers</label>
-          <input id="q-passengers" name="passengers" type="number" min="1" max="50" value="1">
-        </div>
-        <div class="field full">
-          <label for="q-pickup">Pickup location <b>*</b></label>
-          <input id="q-pickup" name="pickup_address" type="text" placeholder="Address, airport or hotel" required>
-        </div>
-        <div class="field full">
-          <label for="q-dropoff">Drop-off location</label>
-          <input id="q-dropoff" name="dropoff_address" type="text" placeholder="Address, airport or hotel">
-        </div>
-        <div class="field">
-          <label for="q-vehicles">Vehicles needed</label>
-          <select id="q-vehicles" name="vehicles">
-            <option value="1">1 vehicle</option>
-            <option value="2">2 vehicles</option>
-            <option value="3">3 vehicles</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="q-flight">Flight number (if any)</label>
-          <input id="q-flight" name="flight_code" type="text" placeholder="e.g. AA1234">
-        </div>
-        <div class="field full">
-          <label for="q-notes">Notes / special requests</label>
-          <textarea id="q-notes" name="notes" placeholder="Anything we should know — itinerary, stops, preferences"></textarea>
-        </div>
-      </div>
-      <div class="qsubmit">
-        <button class="btn" type="submit" id="qBtn">Send Quote Request</button>
-      </div>
-      <p class="qmsg" id="qMsg"></p>
-      <p class="qnote">Your details are used only to prepare your quote. Prefer email? Write to <a href="mailto:info@blueprintle.com" style="color:var(--accent);text-decoration:none;">info@blueprintle.com</a>.</p>
-    </form>
-  </section>
-
-  <section class="area">
-    <h2>Service Area</h2>
-    <p>Based in Fort Lauderdale, Florida — serving clients nationwide across the United States.</p>
-  </section>
-
-  <section class="contact">
-    <h2>Contact</h2>
-    <p>Blueprintle Service LLC<br>Fort Lauderdale, Florida</p>
-    <p><a href="mailto:info@blueprintle.com">info@blueprintle.com</a></p>
-  </section>
-
-  <footer>© 2026 Blueprintle Service LLC. All rights reserved.</footer>
+  <footer class="site">
+    <nav>
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="fleet.html">Fleet</a>
+      <a href="booking.html">Book</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    </nav>
+    <p>© 2026 Blueprintle Service LLC · Fort Lauderdale, Florida · <a href="mailto:info@blueprintle.com">info@blueprintle.com</a></p>
+  </footer>
 </div>
-
-<script>
-// Quote requests are stored in the Blueprintle dispatch backend (Supabase).
-// The browser key below is the public "publishable" key; the table accepts
-// anonymous INSERTs only (row-level security) — nothing can be read back.
-var SB_URL = 'https://rybegzvtqxglneevamha.supabase.co';
-var SB_KEY = 'sb_publishable_ETzQNNOJZyaxg66on3Hbxw_1GpzG4g1';
-
-document.getElementById('quoteForm').addEventListener('submit', function (ev) {
-  ev.preventDefault();
-  var f = ev.target;
-  var msg = document.getElementById('qMsg');
-  var btn = document.getElementById('qBtn');
-  msg.className = 'qmsg'; msg.textContent = '';
-
-  var name = f.name.value.trim();
-  var phone = f.phone.value.trim();
-  var date = f.pickup_date.value;
-  var pickup = f.pickup_address.value.trim();
-  if (!name || !phone || !date || !pickup) {
-    msg.className = 'qmsg err';
-    msg.textContent = 'Please fill in your name, phone, pickup date and pickup location.';
-    return;
-  }
-
-  var payload = {
-    name: name,
-    phone: phone,
-    email: f.email.value.trim() || null,
-    service_type: f.service_type.value,
-    pickup_date: date,
-    pickup_time: f.pickup_time.value || null,
-    pickup_address: pickup,
-    dropoff_address: f.dropoff_address.value.trim() || null,
-    passengers: parseInt(f.passengers.value, 10) || 1,
-    vehicles: parseInt(f.vehicles.value, 10) || 1,
-    flight_code: f.flight_code.value.trim() || null,
-    notes: f.notes.value.trim() || null
-  };
-
-  btn.disabled = true; btn.textContent = 'Sending…';
-  fetch(SB_URL + '/rest/v1/quote_requests', {
-    method: 'POST',
-    headers: {
-      'apikey': SB_KEY,
-      'Authorization': 'Bearer ' + SB_KEY,
-      'Content-Type': 'application/json',
-      'Prefer': 'return=minimal'
-    },
-    body: JSON.stringify(payload)
-  }).then(function (r) {
-    if (!r.ok) throw new Error('send failed');
-    f.reset();
-    msg.className = 'qmsg ok';
-    msg.textContent = 'Thank you — your request has been received. We will reply with your quote shortly.';
-  }).catch(function () {
-    msg.className = 'qmsg err';
-    msg.textContent = 'Something went wrong sending your request. Please email us at info@blueprintle.com.';
-  }).finally(function () {
-    btn.disabled = false; btn.textContent = 'Send Quote Request';
-  });
-});
-</script>
 </body>
 </html>

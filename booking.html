@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book — Blueprintle Service LLC | Instant Estimate & Quote Request</title>
+<meta name="description" content="Book your Miami chauffeur service online: choose your vehicle, see an instant estimate for hourly charters, and send your request. Escalade, Sprinter and VIP Sprinter — all 2025 or newer.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html">Blueprint<span>le</span></a>
+    <nav class="main">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="fleet.html">Fleet</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="booking.html" class="cta">Book Now</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="page-head">
+    <h1>Book Your Trip</h1>
+    <p>Tell us the plan — hourly charters show an instant estimate. Every request is confirmed personally with a final quote.</p>
+  </div>
+
+  <section>
+    <form class="book" id="bookForm" novalidate>
+
+      <div class="bstep">
+        <h3>Step 1 <span>— Your trip</span></h3>
+        <div class="seg" id="typeSeg">
+          <button type="button" data-type="Hourly" class="on">Hourly Charter</button>
+          <button type="button" data-type="Full-Day">Full-Day</button>
+          <button type="button" data-type="Transfer">Transfer</button>
+        </div>
+        <div class="qgrid" style="margin-top:18px;">
+          <div class="field">
+            <label for="b-service">Service</label>
+            <select id="b-service" name="service_type">
+              <option>Chauffeur Service</option>
+              <option>Airport Transfer</option>
+              <option>Private Protection</option>
+              <option>Vehicle Provision</option>
+              <option>City Tour</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="b-date">Pickup date <b>*</b></label>
+            <input id="b-date" name="pickup_date" type="date" required>
+          </div>
+          <div class="field">
+            <label for="b-time">Pickup time</label>
+            <input id="b-time" name="pickup_time" type="time">
+          </div>
+          <div class="field" id="hoursField">
+            <label for="b-hours">Hours (min. 3)</label>
+            <input id="b-hours" name="hours" type="number" min="3" max="24" value="3">
+          </div>
+          <div class="field full">
+            <label for="b-pickup">Pickup location <b>*</b></label>
+            <input id="b-pickup" name="pickup_address" type="text" placeholder="Address, airport or hotel" required>
+          </div>
+          <div class="field full">
+            <label for="b-dropoff">Drop-off location</label>
+            <input id="b-dropoff" name="dropoff_address" type="text" placeholder="Address, airport or hotel">
+          </div>
+          <div class="field">
+            <label for="b-flight">Flight number (if any)</label>
+            <input id="b-flight" name="flight_code" type="text" placeholder="e.g. AA1234">
+          </div>
+        </div>
+      </div>
+
+      <div class="bstep">
+        <h3>Step 2 <span>— Vehicle &amp; party</span></h3>
+        <div class="vcards" id="vcards">
+          <div class="vcard on" data-veh="Escalade" data-rate="145" data-day="130">
+            <h4>Cadillac Escalade</h4>
+            <div class="vp">$145<small>/hr</small></div>
+            <p>Up to 5 passengers · Full-day $130/hr · 2025+</p>
+          </div>
+          <div class="vcard" data-veh="Sprinter" data-rate="139" data-day="139">
+            <h4>Mercedes Sprinter</h4>
+            <div class="vp">$139<small>/hr</small></div>
+            <p>Up to 14 passengers · Group travel · 2025+</p>
+          </div>
+          <div class="vcard" data-veh="VIP Sprinter" data-rate="200" data-day="200">
+            <h4>VIP Exclusive Sprinter</h4>
+            <div class="vp">$200<small>/hr</small></div>
+            <p>Executive interior · Maximum comfort &amp; privacy · 2025+</p>
+          </div>
+        </div>
+        <div class="qgrid" style="margin-top:18px;">
+          <div class="field">
+            <label for="b-pax">Passengers</label>
+            <input id="b-pax" name="passengers" type="number" min="1" max="50" value="1">
+          </div>
+          <div class="field">
+            <label for="b-vehicles">Vehicles needed</label>
+            <input id="b-vehicles" name="vehicles" type="number" min="1" value="1">
+          </div>
+          <div class="field">
+            <label for="b-bags">Luggage (pieces)</label>
+            <input id="b-bags" name="luggage_count" type="number" min="0" max="100" value="0">
+          </div>
+          <div class="field">
+            <label>&nbsp;</label>
+            <label class="check"><input id="b-lugvan" name="luggage_van" type="checkbox"> Add a luggage van (separate vehicle for luggage)</label>
+          </div>
+        </div>
+        <div class="estimate" id="estimateBox">
+          <div class="amt" id="estAmt">$435</div>
+          <p id="estNote">Instant estimate — Escalade × 3 hours. Your final quote is confirmed personally; the luggage van, if selected, is quoted with your itinerary.</p>
+        </div>
+      </div>
+
+      <div class="bstep">
+        <h3>Step 3 <span>— Your details</span></h3>
+        <div class="qgrid">
+          <div class="field">
+            <label for="b-name">Full name <b>*</b></label>
+            <input id="b-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="b-phone">Phone <b>*</b></label>
+            <input id="b-phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="field full">
+            <label for="b-email">Email</label>
+            <input id="b-email" name="email" type="email" autocomplete="email">
+          </div>
+          <div class="field full">
+            <label for="b-notes">Notes / special requests</label>
+            <textarea id="b-notes" name="notes" placeholder="Itinerary, stops, preferences — anything we should know"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="qsubmit">
+        <button class="btn solid" type="submit" id="bBtn">Send Booking Request</button>
+      </div>
+      <p class="qmsg" id="bMsg"></p>
+      <p class="qnote">Your details are used only to prepare your quote. Prefer email? <a href="mailto:info@blueprintle.com">info@blueprintle.com</a></p>
+    </form>
+  </section>
+
+  <footer class="site">
+    <nav>
+      <a href="index.html">Home</a><a href="services.html">Services</a><a href="fleet.html">Fleet</a>
+      <a href="booking.html">Book</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    </nav>
+    <p>© 2026 Blueprintle Service LLC · Fort Lauderdale, Florida · <a href="mailto:info@blueprintle.com">info@blueprintle.com</a></p>
+  </footer>
+</div>
+
+<script>
+var SB_URL = 'https://rybegzvtqxglneevamha.supabase.co';
+var SB_KEY = 'sb_publishable_ETzQNNOJZyaxg66on3Hbxw_1GpzG4g1';
+
+var state = { type: 'Hourly', veh: 'Escalade', rate: 145, day: 130 };
+
+function money(n) { return '$' + n.toLocaleString('en-US'); }
+
+function recalc() {
+  var hours = Math.max(3, parseInt(document.getElementById('b-hours').value, 10) || 3);
+  var vehicles = parseInt(document.getElementById('b-vehicles').value, 10) || 1;
+  var amt = document.getElementById('estAmt');
+  var note = document.getElementById('estNote');
+  document.getElementById('hoursField').style.display = state.type === 'Hourly' ? '' : 'none';
+  if (state.type === 'Transfer') {
+    amt.textContent = 'Quoted individually';
+    note.textContent = 'Transfers are priced by route — send the request and we will reply with your price.';
+    return null;
+  }
+  var perHour = state.type === 'Full-Day' ? state.day : state.rate;
+  var hrs = state.type === 'Full-Day' ? 8 : hours;
+  var total = perHour * hrs * vehicles;
+  amt.textContent = money(total);
+  note.textContent = 'Instant estimate — ' + state.veh + ' × ' + hrs + ' hours' +
+    (vehicles > 1 ? ' × ' + vehicles + ' vehicles' : '') +
+    '. Your final quote is confirmed personally; the luggage van, if selected, is quoted with your itinerary.';
+  return total;
+}
+
+document.getElementById('typeSeg').addEventListener('click', function (e) {
+  if (e.target.tagName !== 'BUTTON') return;
+  state.type = e.target.dataset.type;
+  this.querySelectorAll('button').forEach(b => b.classList.toggle('on', b === e.target));
+  recalc();
+});
+document.getElementById('vcards').addEventListener('click', function (e) {
+  var card = e.target.closest('.vcard'); if (!card) return;
+  this.querySelectorAll('.vcard').forEach(c => c.classList.toggle('on', c === card));
+  state.veh = card.dataset.veh;
+  state.rate = parseInt(card.dataset.rate, 10);
+  state.day = parseInt(card.dataset.day, 10);
+  recalc();
+});
+['b-hours', 'b-vehicles'].forEach(id => document.getElementById(id).addEventListener('input', recalc));
+recalc();
+
+document.getElementById('bookForm').addEventListener('submit', function (ev) {
+  ev.preventDefault();
+  var f = ev.target;
+  var msg = document.getElementById('bMsg');
+  var btn = document.getElementById('bBtn');
+  msg.className = 'qmsg'; msg.textContent = '';
+
+  var name = f.name.value.trim(), phone = f.phone.value.trim();
+  var date = f.pickup_date.value, pickup = f.pickup_address.value.trim();
+  if (!name || !phone || !date || !pickup) {
+    msg.className = 'qmsg err';
+    msg.textContent = 'Please fill in your name, phone, pickup date and pickup location.';
+    return;
+  }
+  var est = recalc();
+  var hours = Math.max(3, parseInt(f.hours.value, 10) || 3);
+  var bags = parseInt(f.luggage_count.value, 10) || 0;
+  var detail = 'Booking: ' + state.type +
+    (state.type === 'Hourly' ? ' · ' + hours + 'h' : '') +
+    ' · Vehicle: ' + state.veh +
+    (est ? ' · Estimate: ' + money(est) : '');
+  var notes = [f.notes.value.trim(), detail,
+    bags > 0 ? 'Luggage: ' + bags + ' pieces' : '',
+    f.luggage_van.checked ? 'LUGGAGE VAN requested' : '']
+    .filter(Boolean).join(' | ');
+
+  var payload = {
+    name: name, phone: phone,
+    email: f.email.value.trim() || null,
+    service_type: f.service_type.value,
+    pickup_date: date,
+    pickup_time: f.pickup_time.value || null,
+    pickup_address: pickup,
+    dropoff_address: f.dropoff_address.value.trim() || null,
+    passengers: parseInt(f.passengers.value, 10) || 1,
+    vehicles: parseInt(f.vehicles.value, 10) || 1,
+    flight_code: f.flight_code.value.trim() || null,
+    notes: notes || null
+  };
+
+  btn.disabled = true; btn.textContent = 'Sending…';
+  fetch(SB_URL + '/rest/v1/quote_requests', {
+    method: 'POST',
+    headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
+    body: JSON.stringify(payload)
+  }).then(function (r) {
+    if (!r.ok) throw new Error('send failed');
+    f.reset();
+    msg.className = 'qmsg ok';
+    msg.textContent = 'Thank you — your booking request has been received. We will reply shortly with your confirmed quote.';
+  }).catch(function () {
+    msg.className = 'qmsg err';
+    msg.textContent = 'Something went wrong sending your request. Please email us at info@blueprintle.com.';
+  }).finally(function () {
+    btn.disabled = false; btn.textContent = 'Send Booking Request';
+  });
+});
+</script>
+</body>
+</html>
