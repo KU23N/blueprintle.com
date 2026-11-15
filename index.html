@@ -114,12 +114,18 @@
       .hero-fact svg{ width:22px; height:22px; flex:none; stroke:var(--gold); margin-top:.15rem; }
       .hero-fact strong{ display:block; color:var(--ivory); font-size:.95rem; letter-spacing:.02em; }
       .hero-fact span{ color:var(--muted); font-size:.86rem; line-height:1.45; display:block; }
-      .hero-areas{ position:relative; z-index:2; border-top:1px solid var(--line-soft); padding:1.05rem 0 1.25rem; display:flex; flex-wrap:wrap; align-items:baseline; gap:.45rem .9rem; }
-      .hero-areas .ha-label{ font-size:.68rem; font-weight:800; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); margin-right:.4rem; }
-      .hero-areas a, .hero-areas span.city{ color:#e8ebf4; font-size:.92rem; font-weight:600; letter-spacing:.04em; text-decoration:none; }
-      .hero-areas a:hover{ color:var(--gold-soft); }
-      .hero-areas .dot{ color:var(--gold); opacity:.75; }
-      .hero-areas .ha-note{ color:var(--muted); font-size:.86rem; font-style:italic; margin-left:.4rem; }
+      .areas-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:1.4rem; margin-top:2.6rem; }
+      .area-card{ display:block; border:1px solid var(--line-soft); padding:1.7rem 1.5rem 1.5rem; text-decoration:none; background:rgba(255,255,255,.02); transition:border-color .25s, transform .25s; }
+      .area-card:hover{ border-color:var(--gold-dim); transform:translateY(-3px); }
+      .area-card h3{ color:var(--ivory); font-size:1.22rem; margin:0 0 .55rem; font-weight:600; }
+      .area-card p{ color:var(--muted); font-size:.92rem; line-height:1.55; margin:0 0 1.1rem; }
+      .area-card .go{ color:var(--gold); font-size:.8rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; }
+      .areas-more{ margin-top:2.2rem; border-top:1px solid var(--line-soft); padding-top:1.6rem; display:flex; flex-wrap:wrap; gap:.6rem 2.2rem; align-items:baseline; }
+      .areas-more .am-label{ font-size:.7rem; font-weight:800; letter-spacing:.3em; text-transform:uppercase; color:var(--gold); }
+      .areas-more .am-city{ color:#e8ebf4; font-weight:600; }
+      .areas-more .am-note{ color:var(--muted); font-style:italic; }
+      @media (max-width:900px){ .areas-grid{ grid-template-columns:1fr 1fr; } }
+      @media (max-width:560px){ .areas-grid{ grid-template-columns:1fr; } }
 
       /* ---------- Sections ---------- */
       section{ padding:6.2rem 0; }
@@ -431,7 +437,7 @@
         <p class="lede">Blueprintle puts a professional chauffeur at the wheel, a protection specialist at your side, and a live dispatch desk behind both of them — one coordinated team for every mile you move.</p>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="booking.html">Request a Quote</a>
-          <a class="btn btn-ghost" href="index.html#protection">Private Protection</a>
+          <a class="btn btn-ghost" href="index.html#areas">Service Areas</a>
         </div>
       </div>
       <div class="wrap">
@@ -448,18 +454,6 @@
             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
             <div><strong>Discretion is the standard</strong><span>Built for clients whose names never leave the vehicle.</span></div>
           </div>
-        </div>
-        <div class="hero-areas">
-          <span class="ha-label">Service Areas</span>
-          <a href="limo-service-miami.html">Miami</a><span class="dot">·</span>
-          <a href="black-car-service-miami-beach.html">Miami Beach</a><span class="dot">·</span>
-          <a href="limo-service-fort-lauderdale.html">Fort Lauderdale</a><span class="dot">·</span>
-          <a href="chauffeur-service-palm-beach.html">Palm Beach</a><span class="dot">·</span>
-          <span class="city">Boca Raton</span><span class="dot">·</span>
-          <span class="city">Orlando</span><span class="dot">·</span>
-          <span class="city">Tampa</span><span class="dot">·</span>
-          <span class="city">Naples</span>
-          <span class="ha-note">— and nationwide on request</span>
         </div>
       </div>
     </div>
@@ -589,6 +583,47 @@
             <div><span>Vehicles</span><strong>2-car movement</strong></div>
             <div><span>Dispatch</span><strong>Watching now</strong></div>
           </div>
+        </div>
+      </div>
+    </section>
+
+<!-- ================= SERVICE AREAS ================= -->
+    <section class="areas" id="areas">
+      <div class="wrap">
+        <div class="sec-head reveal">
+          <p class="sec-tag">Service Areas</p>
+          <h2>South Florida, covered.<br />The country, on request.</h2>
+          <p>Blueprintle is based in Fort Lauderdale and runs daily across South Florida — with the same chauffeurs, vehicles and live dispatch on every mile. Multi-city movements are coordinated nationwide.</p>
+        </div>
+        <div class="areas-grid reveal">
+          <a class="area-card" href="limo-service-miami.html">
+            <h3>Miami</h3>
+            <p>Brickell boardrooms, Wynwood nights, MIA arrivals — our busiest ground, covered around the clock.</p>
+            <span class="go">Explore →</span>
+          </a>
+          <a class="area-card" href="black-car-service-miami-beach.html">
+            <h3>Miami Beach</h3>
+            <p>Collins Avenue, South Beach and the Convention Center — picked up and dropped off without the fuss.</p>
+            <span class="go">Explore →</span>
+          </a>
+          <a class="area-card" href="limo-service-fort-lauderdale.html">
+            <h3>Fort Lauderdale</h3>
+            <p>Our home base. Las Olas, Port Everglades and FLL — minutes away, any hour of the day or night.</p>
+            <span class="go">Explore →</span>
+          </a>
+          <a class="area-card" href="chauffeur-service-palm-beach.html">
+            <h3>Palm Beach</h3>
+            <p>Worth Avenue, Wellington season and DJT arrivals — by the day, the week, or the whole season.</p>
+            <span class="go">Explore →</span>
+          </a>
+        </div>
+        <div class="areas-more reveal">
+          <span class="am-label">Also Serving</span>
+          <span class="am-city">Boca Raton</span>
+          <span class="am-city">Orlando</span>
+          <span class="am-city">Tampa</span>
+          <span class="am-city">Naples</span>
+          <span class="am-note">— and multi-city movements nationwide on request.</span>
         </div>
       </div>
     </section>
