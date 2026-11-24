@@ -459,6 +459,22 @@
               <script type="text/javascript" src="https://book.mylimobiz.com/v4/widgets/widget-loader.js"></script>
             </div>
           </div>
+          <script>
+            (function () {
+              function crop(f) {
+                f.style.setProperty('width', 'calc(100% + 12px)', 'important');
+                f.style.setProperty('min-width', 'calc(100% + 12px)', 'important');
+                f.style.setProperty('margin', '-6px 0 -12px -6px');
+                f.style.setProperty('background', '#081226');
+              }
+              var n = 0;
+              var t = setInterval(function () {
+                var f = document.querySelector('.ores-box iframe');
+                if (f) { crop(f); if (++n > 6) clearInterval(t); }
+                else if (++n > 40) { clearInterval(t); }
+              }, 700);
+            })();
+          </script>
           <p class="ores-note">Live availability and pricing. Your reservation goes straight to dispatch and is confirmed by our team. If the booking window does not load, <a href="https://book.mylimobiz.com/v4/blueprintle" target="_blank" rel="noopener">open the booking page directly</a>.</p>
         </div>
       </div>
