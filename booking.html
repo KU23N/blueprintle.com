@@ -8,7 +8,7 @@
     <link rel="icon" href="data:," />
     <title>Get a Quote — Limo &amp; Black Car Service in Miami | Blueprintle</title>
   <link rel="canonical" href="https://blueprintle.com/booking.html">
-    <meta name="description" content="Request a quote for limo service, black car service or a private chauffeur in Miami &amp; Fort Lauderdale — instant estimate. Escalade $145/hr, Sprinter $139/hr." />
+    <meta name="description" content="Book online — limo service, black car service and private chauffeurs in Miami &amp; Fort Lauderdale. Live availability and pricing, reservations straight to dispatch." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -248,6 +248,10 @@
       .quote-direct span small{ display:block; color:var(--muted-2); font-size:.72rem; font-weight:800; letter-spacing:.22em; text-transform:uppercase; }
       .quote-direct span strong{ color:var(--ivory); font-size:1.02rem; }
       form.quote-form{ background:var(--navy-950); border:1px solid var(--line); border-radius:var(--radius); padding:2rem; }
+      .ores-box{ background:#f8f8f8; border-radius:8px; padding:.6rem; min-height:420px; }
+      .ores-box iframe{ width:100%; border:0; border-radius:6px; }
+      .ores-note{ margin-top:1rem; color:var(--muted); font-size:.9rem; }
+      .ores-note a{ color:var(--gold-soft); }
       .form-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.1rem; }
       .field{ display:flex; flex-direction:column; gap:.4rem; }
       .field.full{ grid-column:1 / -1; }
@@ -423,7 +427,7 @@
         <div class="quote-copy reveal">
           <p class="sec-tag">Request a Quote</p>
           <h2>Start with the details.<br />We handle the rest.</h2>
-          <p>Send the shape of your trip and get a firm quote back from dispatch — or reach us directly. For protection work and anything sensitive, the phone is always the better door.</p>
+          <p>Book online in the window on this page — live vehicles, live pricing, straight to dispatch. Prefer a human, or is it protection work and anything sensitive? The phone is always the better door.</p>
           <div class="quote-direct">
             <a href="tel:+15616018721">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -439,62 +443,14 @@
             </a>
           </div>
         </div>
-        <form class="quote-form reveal" id="quoteForm" novalidate>
-          <div class="form-grid">
-            <div class="field">
-              <label for="fName">Your name</label>
-              <input id="fName" name="name" type="text" autocomplete="name" placeholder="Full name" />
-            </div>
-            <div class="field">
-              <label for="fPhone">Phone</label>
-              <input id="fPhone" name="phone" type="tel" autocomplete="tel" placeholder="+1 (___) ___-____" />
-            </div>
-            <div class="field">
-              <label for="fService">Service</label>
-              <select id="fService" name="service">
-                <option value="hourly">Hourly charter</option>
-                <option value="fullday">Full-day charter</option>
-                <option value="transfer">Airport / transfer</option>
-                <option value="protection">Chauffeur + protection</option>
-                <option value="group">Group / event</option>
-                <option value="tour">City tour</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="fVehicle">Vehicle class</label>
-              <select id="fVehicle" name="vehicle">
-                <option value="suv">SUV / Escalade — $145/hr</option>
-                <option value="sprinter">Passenger Sprinter — $139/hr</option>
-                <option value="vip">VIP Exclusive Sprinter — $200/hr</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="fDate">Date</label>
-              <input id="fDate" name="date" type="date" />
-            </div>
-            <div class="field">
-              <label for="fHours">Hours</label>
-              <input id="fHours" name="hours" type="number" min="1" max="24" step="1" value="4" />
-            </div>
-            <div class="field full">
-              <label for="fPickup">Pickup location</label>
-              <input id="fPickup" name="pickup" type="text" placeholder="Hotel, address, airport or FBO" />
-            </div>
-            <div class="field full">
-              <label for="fNotes">Anything dispatch should know</label>
-              <textarea id="fNotes" name="notes" placeholder="Passengers, luggage, stops, special requests…"></textarea>
-            </div>
+        <div class="quote-form reveal" id="bookOnline">
+          <p class="sec-tag" style="margin-bottom:1rem;">Book Online</p>
+          <div class="ores-box">
+            <a href="https://book.mylimobiz.com/v4/blueprintle" data-ores-widget="website" data-ores-alias="blueprintle">Online Reservations</a>
+            <script type="text/javascript" src="https://book.mylimobiz.com/v4/widgets/widget-loader.js"></script>
           </div>
-          <div class="estimate" aria-live="polite">
-            <span class="est-label">Instant estimate</span>
-            <span class="est-value" id="estValue">$580</span>
-            <span class="est-note" id="estNote">SUV / Escalade · 4 hours at $145/hr. Final quote confirmed by dispatch; peak-date rates may apply.</span>
-          </div>
-          <div class="form-actions">
-            <button type="submit" class="btn btn-gold" id="sendRequest">Send Request to Dispatch</button>
-          </div>
-          <p class="form-sent" id="formSent" role="status"></p>
-        </form>
+          <p class="ores-note">Live availability and pricing. Your reservation goes straight to dispatch and is confirmed by our team. If the booking window does not load, <a href="https://book.mylimobiz.com/v4/blueprintle" target="_blank" rel="noopener">open the booking page directly</a>.</p>
+        </div>
       </div>
     </section>
 
@@ -549,161 +505,7 @@
       <a class="btn btn-gold" href="booking.html">Get a Quote</a>
     </div>
 
-    <script>
-      (function () {
-        var SB_URL = 'https://rybegzvtqxglneevamha.supabase.co';
-        var SB_KEY = 'sb_publishable_ETzQNNOJZyaxg66on3Hbxw_1GpzG4g1';
-
-        var rates = {
-          suv:      { label: 'SUV / Escalade',         vehName: 'Escalade',     hourly: 145, fullday: 130 },
-          sprinter: { label: 'Passenger Sprinter',     vehName: 'Sprinter',     hourly: 139, fullday: 139 },
-          vip:      { label: 'VIP Exclusive Sprinter', vehName: 'VIP Sprinter', hourly: 200, fullday: 200 }
-        };
-        var fService = document.getElementById('fService');
-        var fVehicle = document.getElementById('fVehicle');
-        var fHours = document.getElementById('fHours');
-        var fDate = document.getElementById('fDate');
-        var estValue = document.getElementById('estValue');
-        var estNote = document.getElementById('estNote');
-        var lastEstimate = { total: null, special: null };
-
-        // Special-date pricing set by Blueprintle in the dispatch console
-        // (rate_overrides). Public read-only; falls back silently to
-        // standard rates if unavailable. (Same integration as the v2 site.)
-        var overrides = [];
-        fetch(SB_URL + '/rest/v1/rate_overrides?select=*&active=eq.true', {
-          headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY }
-        }).then(function (r) { return r.ok ? r.json() : []; })
-          .then(function (rows) { overrides = rows || []; updateEstimate(); })
-          .catch(function () {});
-
-        function currentOverride() {
-          var d = fDate.value;
-          if (!d) return null;
-          for (var i = 0; i < overrides.length; i++) {
-            if (overrides[i].date_from <= d && d <= overrides[i].date_to) return overrides[i];
-          }
-          return null;
-        }
-
-        // Base card rates, replaced per vehicle class by a matching
-        // special-date override. For Sprinter classes the special hourly
-        // rate also becomes the full-day rate; the Escalade has its own
-        // special day rate.
-        function effRates() {
-          var v = rates[fVehicle.value] || rates.suv;
-          var r = { hourly: v.hourly, fullday: v.fullday, special: null };
-          var o = currentOverride();
-          if (!o) return r;
-          var changed = false;
-          if (fVehicle.value === 'suv') {
-            if (o.escalade_rate != null) { r.hourly = Number(o.escalade_rate); changed = true; }
-            if (o.escalade_day_rate != null) { r.fullday = Number(o.escalade_day_rate); changed = true; }
-          } else if (fVehicle.value === 'sprinter' && o.sprinter_rate != null) {
-            r.hourly = Number(o.sprinter_rate); r.fullday = r.hourly; changed = true;
-          } else if (fVehicle.value === 'vip' && o.vip_sprinter_rate != null) {
-            r.hourly = Number(o.vip_sprinter_rate); r.fullday = r.hourly; changed = true;
-          }
-          if (changed) r.special = o.name;
-          return r;
-        }
-
-        function money(n) { return '$' + n.toLocaleString('en-US'); }
-        function hoursVal() {
-          var h = parseInt(fHours.value, 10);
-          if (isNaN(h) || h < 1) h = 1;
-          if (h > 24) h = 24;
-          return h;
-        }
-        function updateEstimate() {
-          var v = rates[fVehicle.value] || rates.suv;
-          var h = hoursVal();
-          lastEstimate = { total: null, special: null };
-          if (fService.value === 'transfer') {
-            estValue.textContent = 'Quoted flat';
-            estNote.textContent = 'Transfers are priced by route — send the request and dispatch will reply with your price.';
-            return null;
-          }
-          var er = effRates();
-          var perHour = fService.value === 'fullday' ? er.fullday : er.hourly;
-          var total = perHour * h;
-          lastEstimate = { total: total, special: er.special };
-          estValue.textContent = money(total);
-          var kind = fService.value === 'fullday' ? 'full-day rate' : 'hourly rate';
-          estNote.textContent = v.label + ' · ' + h + (h === 1 ? ' hour' : ' hours') + ' at ' + money(perHour) + '/hr (' + kind + ').' +
-            (er.special ? ' Special pricing applied: ' + er.special + '.' : '') +
-            ' Final quote confirmed by dispatch; peak-date rates may apply.';
-          return total;
-        }
-        [fService, fVehicle, fHours, fDate].forEach(function (el) {
-          el.addEventListener('change', updateEstimate);
-          el.addEventListener('input', updateEstimate);
-        });
-        updateEstimate();
-
-        function val(id) { return (document.getElementById(id).value || '').trim(); }
-        function serviceLabel() {
-          var o = fService.options[fService.selectedIndex];
-          return o ? o.text : '';
-        }
-
-        var form = document.getElementById('quoteForm');
-        var formSent = document.getElementById('formSent');
-        var sendBtn = document.getElementById('sendRequest');
-        function showMsg(ok, text) {
-          formSent.className = 'form-sent' + (ok ? '' : ' err');
-          formSent.textContent = text;
-          formSent.style.display = 'block';
-        }
-
-        form.addEventListener('submit', function (ev) {
-          ev.preventDefault();
-          var name = val('fName'), phone = val('fPhone');
-          var date = val('fDate'), pickup = val('fPickup');
-          if (!name || !phone || !date || !pickup) {
-            showMsg(false, 'Please fill in your name, phone, date and pickup location so dispatch can reach you.');
-            return;
-          }
-          updateEstimate();
-          var v = rates[fVehicle.value] || rates.suv;
-          var detail = 'Booking: ' + serviceLabel() +
-            ' · Vehicle: ' + v.vehName +
-            (lastEstimate.total ? ' · Estimate: ' + money(lastEstimate.total) : '') +
-            (lastEstimate.special ? ' · Special pricing: ' + lastEstimate.special : '');
-          var notes = [val('fNotes'), detail].filter(Boolean).join(' | ');
-
-          var payload = {
-            name: name, phone: phone,
-            email: null,
-            service_type: serviceLabel(),
-            pickup_date: date,
-            pickup_time: null,
-            pickup_address: pickup,
-            dropoff_address: null,
-            passengers: 1,
-            vehicles: 1,
-            flight_code: null,
-            notes: notes || null
-          };
-
-          sendBtn.disabled = true; sendBtn.textContent = 'Sending…';
-          fetch(SB_URL + '/rest/v1/quote_requests', {
-            method: 'POST',
-            headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal' },
-            body: JSON.stringify(payload)
-          }).then(function (r) {
-            if (!r.ok) throw new Error('send failed');
-            form.reset();
-            updateEstimate();
-            showMsg(true, 'Thank you — your request has been received by dispatch. We will reply shortly with your confirmed quote. Prefer to talk? Dispatch answers at +1 (561) 601-8721, day or night.');
-          }).catch(function () {
-            showMsg(false, 'Something went wrong sending your request. Please call +1 (561) 601-8721 or email info@blueprintle.com.');
-          }).finally(function () {
-            sendBtn.disabled = false; sendBtn.textContent = 'Send Request to Dispatch';
-          });
-        });
-      })();
-    </script>
+    <!-- Booking is handled by the Limo Anywhere widget above. -->
 
     <script>
       (function () {
